@@ -47,6 +47,7 @@ func Perform(args Arguments, writer io.Writer) error {
 		if err != nil {
 			writer.Write([]byte(err.Error()))
 		}
+		break
 	case "findById":
 		if _, ok := args["id"]; !ok || args["id"] == "" {
 			return errors.New("-id flag has to be specified")
